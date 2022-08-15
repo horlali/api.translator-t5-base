@@ -8,6 +8,7 @@ authors = ["horlali <gideon.ahiadzi@gmail.com>"]
 python = "^3.9"
 fastapi = "^0.79.0"
 transformers = {extras = ["torch"], version = "^4.21.1"}
+sentencepiece = "^0.1.97"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

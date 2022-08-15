@@ -256,6 +256,14 @@ use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
 socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 
 [[package]]
+name = "sentencepiece"
+version = "0.1.97"
+description = "SentencePiece python wrapper"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "sniffio"
 version = "1.2.0"
 description = "Sniff out which async library your code is running under"
@@ -412,7 +420,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "a824d9a495e176fe285a7c9f40500ca19164b523b8ca2661b96233304584a0bb"
+content-hash = "feefffb7b1a52e9d1d8b954d7c3829938144cac4ad4ada71a64fa5d042fe90ac"
 
 [metadata.files]
 anyio = []
@@ -436,6 +444,7 @@ pytest = []
 pyyaml = []
 regex = []
 requests = []
+sentencepiece = []
 sniffio = []
 starlette = []
 tokenizers = []
