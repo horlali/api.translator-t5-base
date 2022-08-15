@@ -6,6 +6,8 @@ authors = ["horlali <gideon.ahiadzi@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+fastapi = "^0.79.0"
+transformers = {extras = ["torch"], version = "^4.21.1"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
