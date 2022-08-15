@@ -1,6 +1,9 @@
 from enum import Enum
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
+from src.model import MODEL_PATH
+
+
 text = """You’ll find interesting articles to read on topics like how 
 to stop procrastinating as well as personal 
 recommendations like my list of the best books to read 
@@ -25,11 +28,11 @@ class Language(Enum):
 tokenizer = T5Tokenizer.from_pretrained("t5-base", model_max_length=5120)
 model = T5ForConditionalGeneration.from_pretrained("t5-base")
 
-tokenizer.save_pretrained("/home/aegis-ml/sdujf/model")
-model.save_pretrained("/home/aegis-ml/sdujf/model")
+tokenizer.save_pretrained(MODEL_PATH)
+model.save_pretrained(MODEL_PATH)
 
 input_ids = tokenizer(
-    f"translate {Language.EN.value} to {Language.FR.value}: {text2}",
+    f"translate {Language.EN.value} to {Language.FR.value}: {text}",
     return_tensors="pt",
 ).input_ids
 

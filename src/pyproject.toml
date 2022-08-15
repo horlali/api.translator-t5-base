@@ -9,6 +9,10 @@ python = "^3.9"
 fastapi = "^0.79.0"
 transformers = {extras = ["torch"], version = "^4.21.1"}
 sentencepiece = "^0.1.97"
+black = "^22.6.0"
+isort = "^5.10.1"
+mypy = "^0.971"
+flake8 = "^5.0.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
