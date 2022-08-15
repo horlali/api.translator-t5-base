@@ -18,7 +18,7 @@ ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 
 
 
-#--------------------------------Base Image-----------------------------------
+#--------------------------------Builder Image-----------------------------------
 FROM python-base as builder-base
 RUN apt-get update \
     && apt-get install --no-install-recommends -y \
@@ -38,7 +38,7 @@ RUN poetry install --no-dev
 
 
 
-#--------------------------------Base Image-----------------------------------
+#--------------------------------Production Image-----------------------------------
 FROM python-base as production
 COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
 COPY ./src /src/
