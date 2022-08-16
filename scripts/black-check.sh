@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Go to backend folder
+# Go to root folder
 cd $(dirname $0)/..
 
 ARGS="--check"

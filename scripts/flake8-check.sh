@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Go to source folder
+# Go to root folder
 cd $(dirname $0)/..
 
 ## flake8 is silent when it's successful, so make a small amount of noise

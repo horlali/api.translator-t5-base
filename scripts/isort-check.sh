@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Go to backend folder
+# Go to root folder
 cd $(dirname $0)/..
 
 ARGS="--check-only"
@@ -14,7 +14,7 @@ fi
 
 
 if [ -n "${ENVIRONMENT}" ]; then
-    poetry run isort "${ARGS}" src 
+    poetry run isort "${ARGS}" src && echo "isort successful in production"
 else
-    isort "${ARGS}" src 
+    isort "${ARGS}" src && echo "isort successful in development"
 fi
