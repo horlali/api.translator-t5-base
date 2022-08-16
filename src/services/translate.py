@@ -10,7 +10,7 @@ tokenizer.save_pretrained(MODEL_PATH)
 model.save_pretrained(MODEL_PATH)
 
 
-def translate(translation_item: TranslationItem) -> str:
+def translator(translation_item: TranslationItem) -> str:
     """Translate text from one language to another"""
 
     input_ids = tokenizer(
