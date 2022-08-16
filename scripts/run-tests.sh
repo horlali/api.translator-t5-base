@@ -10,4 +10,5 @@ if [ -n "${ENVIRONMENT}" ]; then
     pytest
 else
     tox "$@"
+    pytest
 fi
