@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from src.api.v1 import translate
 
+from src.api.v1.translate import translate_router
 
 api_router = APIRouter()
-api_router.include_router(translate.router, tags=["translate"])
+api_router.include_router(translate_router, tags=["Translate"])

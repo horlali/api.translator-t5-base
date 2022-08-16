@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+
+  app:
+    build:
+      context: ./src
+    ports:
+      - "8000:8000"
+    restart: always
+    image: translator:latest
+    container_name: T5-BASE-API
+    volumes:
+      - .:/app:rw
+    # env_file:
+    #   - .env

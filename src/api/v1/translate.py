@@ -1,10 +1,11 @@
 from fastapi import APIRouter
 
+from src.schemas.translate import TranslationItem
+from src.services.translator import translate
 
-router = APIRouter()
+translate_router = APIRouter(prefix="/translate")
 
 
-@router.post("/", status_code=200, response_model="")
-def translate():
-    result = "Translated"
-    return result
+@translate_router.post("/")
+def translator(translation_item: TranslationItem):
+    return translate(translation_item)

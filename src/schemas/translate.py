@@ -1,18 +1,25 @@
-from pydantic import BaseModel
 from enum import Enum
+
+from pydantic import BaseModel
 
 
 class Language(str, Enum):
     ENGLISH = "English"
     FRENCH = "French"
-    DE = "German"
-    RO = "Romanian"
+    GERMAN = "German"
+    ROMANIAN = "Romanian"
 
 
-class Translate(BaseModel):
-    source_language: Language = None
-    destination_languague: Language = None
+class TranslationItem(BaseModel):
+    source_language: Language
+    destination_language: Language
+    text: str
 
-
-class TranslateResponse(BaseModel):
-    results: str = None
+    class Config:
+        schema_extra = {
+            "example": {
+                "source_language": Language.ENGLISH.value,
+                "destination_language": Language.FRENCH.value,
+                "text": "How are you",
+            }
+        }

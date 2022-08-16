@@ -1,7 +1,7 @@
-from transformers import T5Tokenizer, T5ForConditionalGeneration
+from transformers import T5ForConditionalGeneration, T5Tokenizer
 
 from src.model import MODEL_PATH
-from src.schemas.translate import Language
+from src.schemas.translate import TranslationItem
 
 tokenizer = T5Tokenizer.from_pretrained("t5-base", model_max_length=5120)
 model = T5ForConditionalGeneration.from_pretrained("t5-base")
@@ -10,31 +10,13 @@ tokenizer.save_pretrained(MODEL_PATH)
 model.save_pretrained(MODEL_PATH)
 
 
-class Translator:
-    @staticmethod
-    def process(
-        source_language: Language, destination_language: Language, input_text: str
-    ):
+def translate(translation_item: TranslationItem):
 
-        input_ids = tokenizer(
-            f"translate {Language.EN.value} to {Language.FR.value}: {input_text}",
-            return_tensors="pt",
-        ).input_ids
+    input_ids = tokenizer(
+        f"translate {translation_item.source_language} to {translation_item.destination_language}: {translation_item.text}",  # noqa: E501
+        return_tensors="pt",
+    ).input_ids
 
-        outputs = model.generate(input_ids, max_new_tokens=5120)
+    outputs = model.generate(input_ids, max_new_tokens=5120)
 
-        return tokenizer.decode(outputs[0], skip_special_tokens=True)
-
-
-text = """You’ll find interesting articles to read on topics like how 
-to stop procrastinating as well as personal 
-recommendations like my list of the best books to read 
-and my minimalist travel guide. Ready to dive in? You 
-can use the categories below to browse my best articles.
-This page shares my best articles to read on topics like 
-health, happiness, creativity, productivity and more. The 
-central question that drives my work is, “How can we live 
-better?” To answer that question, I like to write about 
-science-based ways to solve practical problems."""
-
-text2 = "How are you?"
+    return tokenizer.decode(outputs[0], skip_special_tokens=True)

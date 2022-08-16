@@ -1,0 +1,6 @@
+[flake8]
+exclude = [".git", ".venv"]
+
+max-complexity = 8
+max-line-length = 89
+show-source = true

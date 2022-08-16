@@ -40,6 +40,7 @@ RUN poetry install --no-dev
 
 #--------------------------------Production Image-----------------------------------
 FROM python-base as production
+ENV ENVIRONMENT="production"
 COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
-COPY ./src /src/
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "80"]
+COPY . /src/
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
