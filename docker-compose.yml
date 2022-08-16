@@ -12,5 +12,3 @@ services:
     container_name: T5-BASE-API
     volumes:
       - .:/app:rw
-    # env_file:
-    #   - .env
