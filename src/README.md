@@ -34,7 +34,7 @@ and got some errors, consider execution via `bash`
 
 ## Sample Request
 
-Once the application is up and running
+Once the application is up and running, make a simple request with the command below
 
 ```bash
 curl --request POST \
