@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import RedirectResponse
 
-from src.api.v1.router import api_router
+from src.api.v1.translate import translate_router
 from src.core.config import settings
 
 app = FastAPI(
@@ -19,7 +19,7 @@ def root(request: Request) -> dict:
     return RedirectResponse(url="/docs", status_code=303)
 
 
-app.include_router(api_router, prefix=settings.API_V1_STR)
+app.include_router(translate_router, prefix=settings.API_V1_STR)
 
 
 if __name__ == "__main__":
