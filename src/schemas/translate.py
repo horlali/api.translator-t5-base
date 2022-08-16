@@ -4,10 +4,10 @@ from pydantic import BaseModel
 
 
 class Language(str, Enum):
-    ENGLISH = "English"
-    FRENCH = "French"
-    GERMAN = "German"
-    ROMANIAN = "Romanian"
+    ENGLISH: str = "English"
+    FRENCH: str = "French"
+    GERMAN: str = "German"
+    ROMANIAN: str = "Romanian"
 
 
 class TranslationItem(BaseModel):

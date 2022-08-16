@@ -13,8 +13,9 @@ app = FastAPI(
 )
 
 
-@app.get("/", status_code=200)
+@app.get("/", status_code=200, tags=["Docs"])
 def root(request: Request) -> dict:
+    """Application root path: redirects to docs"""
     return RedirectResponse(url="/docs", status_code=303)
 
 
