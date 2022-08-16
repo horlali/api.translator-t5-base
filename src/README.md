@@ -31,3 +31,24 @@ and got some errors, consider execution via `bash`
 ```bash
 ./scripts/all-checks.sh
 ```
+
+## Sample Request
+
+Once the application is up and running
+
+```bash
+curl --request POST \
+  --url http://0.0.0.0:8000/api/v1/translate/ \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "source_language": "English",
+  "destination_language": "French",
+  "text": "How are you?"
+}'
+```
+
+## Expected Response
+
+```bash
+"Comment vous êtes-vous?"
+```
