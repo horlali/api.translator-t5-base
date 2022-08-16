@@ -1,7 +1,7 @@
 """
-This modules downloads and save the models the application is started
-It is also house the translator service function use for translating
-text to predefined languages
+This modules downloads and save the models when the application is started
+It is also houses the translator service function use for translating text
+to predefined languages
 """
 from transformers import T5ForConditionalGeneration, T5Tokenizer
 
