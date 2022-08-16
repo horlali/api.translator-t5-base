@@ -15,6 +15,7 @@ mypy = "^0.971"
 flake8 = "^5.0.4"
 uvicorn = "^0.18.2"
 email-validator = "^1.2.1"
+pytest-cov = "^3.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

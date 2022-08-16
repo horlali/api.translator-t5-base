@@ -4,6 +4,7 @@
 */__pycache__/
 **/__pycache__/
 **/*.pyc
+.coverage
 .gitignore
 .dockerignore
 Dockerfile
@@ -11,3 +12,6 @@ docker-compose.yml
 README.md
 /src/model
 !/src/model/*.py
+build/
+build/**
+.pytest_cache

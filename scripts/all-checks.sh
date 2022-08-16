@@ -6,4 +6,4 @@ cd $(dirname $0)
 ./black-check.sh 
 ./isort-check.sh 
 ./flake8-check.sh 
-
+./run-tests.sh

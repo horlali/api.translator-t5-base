@@ -9,6 +9,5 @@ echo "add logic here to validate that the required env vars are actually set?"
 if [ -n "${ENVIRONMENT}" ]; then
     pytest
 else
-    tox "$@"
-    pytest
+    pytest --cov
 fi
